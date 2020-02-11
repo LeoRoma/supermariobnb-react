@@ -7,4 +7,4 @@
 
 - React
 - Express
-- Psql
+- Psqll
