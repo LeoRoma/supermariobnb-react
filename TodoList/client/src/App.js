@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import ModalForm from "./Components/Modals/Modal";
 import DataTable from "./Components/Tables/DataTable";
+import SignUp from "./Components/Users/Signup";
 import { CSVLink } from "react-csv";
 
 class App extends Component {
@@ -47,6 +48,8 @@ class App extends Component {
   render() {
     return (
       <Container className="App">
+        <SignUp></SignUp>
+
         <Row>
           <Col>
             <h1 style={{ margin: "20px 0" }}>CRUD Database</h1>
