@@ -18,7 +18,7 @@ class AddEditForm extends React.Component {
 
   submitFormAdd = e => {
     e.preventDefault();
-    fetch("http://localhost:3000/crud", {
+    fetch("http://localhost:3001/crud", {
       method: "post",
       headers: {
         "Content-Type": "application/json"
@@ -46,7 +46,7 @@ class AddEditForm extends React.Component {
 
   submitFormEdit = e => {
     e.preventDefault();
-    fetch("http://localhost:3000/crud", {
+    fetch("http://localhost:3001/crud", {
       method: "put",
       headers: {
         "Content-Type": "application/json"
@@ -92,7 +92,9 @@ class AddEditForm extends React.Component {
 
   render() {
     return (
-      <Form>
+      <Form
+        onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}
+      >
         <FormGroup>
           <Label for="first">First Name</Label>
           <Input
@@ -155,11 +157,7 @@ class AddEditForm extends React.Component {
             value={this.state.hobby}
           />
         </FormGroup>
-        <Button
-          onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}
-        >
-          Submit
-        </Button>
+        <Button>Submit</Button>
       </Form>
     );
   }
