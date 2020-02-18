@@ -3,7 +3,6 @@ import { Container, Row, Col } from "reactstrap";
 import ModalForm from "./Components/Modals/Modal";
 import DataTable from "./Components/Tables/DataTable";
 import SignUp from "./Components/Users/Signup";
-import { CSVLink } from "react-csv";
 
 class App extends Component {
   state = {
@@ -66,15 +65,6 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
-            <CSVLink
-              filename={"db.csv"}
-              color="primary"
-              style={{ float: "left", marginRight: "10px" }}
-              className="btn btn-primary"
-              data={this.state.items}
-            >
-              Download CSV
-            </CSVLink>
             <ModalForm
               buttonLabel="Add Item"
               addItemToState={this.addItemToState}
