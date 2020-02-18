@@ -15,6 +15,9 @@ class SignUp extends Component {
   };
 
   newUserAdd = e => {
+    if (this.state.email !== this.state.confirm_email) {
+      alert("You must enter the same email");
+    }
     e.preventDefault();
     console.log(this.state);
     fetch("http://localhost:3001/", {
@@ -29,7 +32,7 @@ class SignUp extends Component {
         password: this.state.password
       })
     })
-      .then(response => response.json())
+      .then(response => response.json(), console.log(this.state))
       .catch(err => console.log(err));
   };
 
@@ -60,8 +63,8 @@ class SignUp extends Component {
           <Label for="confirm">Confirm Email</Label>
           <Input
             type="text"
-            name="confirm"
-            id="confirm"
+            name="confirm_email"
+            id="confirm_email"
             onChange={this.onChange}
             value={
               this.state.confirm_email === null ? "" : this.state.confirm_email

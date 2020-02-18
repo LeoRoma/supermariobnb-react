@@ -56,6 +56,7 @@ app.get("/", (req, res) => main.getUserData(req, res, db));
 app.post("/", (req, res) => main.postUserData(req, res, db));
 app.put("/", (req, res) => main.putUserData(req, res, db));
 app.delete("/", (req, res) => main.deleteUserData(req, res, db));
+
 app.get("/crud", (req, res) => main.getTableData(req, res, db));
 app.post("/crud", (req, res) => main.postTableData(req, res, db));
 app.put("/crud", (req, res) => main.putTableData(req, res, db));

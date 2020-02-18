@@ -6,11 +6,22 @@ import SignUp from "./Components/Users/Signup";
 
 class App extends Component {
   state = {
-    items: []
+    items: [
+      {
+        id: 1,
+        first: "asdf",
+        last: "asdf",
+        email: "asdf@gmail.com",
+        phone: 1234161234,
+        location: "1234, 1234",
+        hobby: "asdf"
+      }
+    ]
   };
 
   getItems() {
-    fetch("http://localhost:3000/crud")
+    console.log(this.state.items);
+    fetch("http://localhost:3001/crud")
       .then(response => response.json())
       .then(items => this.setState({ items }))
       .catch(err => console.log(err));
